@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Attack on Titan - Episodes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Attack on Titan - Season 1</h1>
+  <div class="grid" id="episodes"></div>
+
+  <script>
+    const totalEpisodes = 26;
+    const episodesDiv = document.getElementById("episodes");
+
+    for (let i = 1; i <= totalEpisodes; i++) {
+      let epNum = String(i).padStart(3, "0");
+      let card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <a href="episode.html?ep=${i}">
+          <h3>Episode ${i}</h3>
+        </a>
+      `;
+      episodesDiv.appendChild(card);
+    }
+  </script>
+</body>
+</html>
