@@ -2,18 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Episode</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Attack on Titan - Episodes</title>
+  <style>
+    body { background:#111; color:#fff; font-family:Arial; text-align:center; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(150px,1fr)); gap:15px; margin:20px; }
+    .card { background:#222; padding:15px; border-radius:10px; }
+    .card a { color:#fff; text-decoration:none; }
+    .card:hover { background:#333; }
+  </style>
 </head>
 <body>
-  <h1>Attack on Titan - Episode 1</h1>
+  <h1>Attack on Titan - Season 1</h1>
+  <div class="grid" id="episodes"></div>
 
-  <video controls width="100%" height="500">
-    <source src="https://drive.google.com/uc?export=download&id=1mhUWJPMc2BX0btTajyfVKDGvPCEATI69" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <script>
+    const totalEpisodes = 26;
+    const episodesDiv = document.getElementById("episodes");
 
-  <br><br>
-  <a href="aot.html">⬅ Back to Episodes</a>
+    for (let i = 1; i <= totalEpisodes; i++) {
+      let card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `<a href="episode.html?ep=${i}"><h3>Episode ${i}</h3></a>`;
+      episodesDiv.appendChild(card);
+    }
+  </script>
 </body>
 </html>

@@ -1,9 +1,15 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Attack on Titan - Episodes</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body { background:#111; color:#fff; font-family:Arial; text-align:center; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(150px,1fr)); gap:15px; margin:20px; }
+    .card { background:#222; padding:15px; border-radius:10px; }
+    .card a { color:#fff; text-decoration:none; }
+    .card:hover { background:#333; }
+  </style>
 </head>
 <body>
   <h1>Attack on Titan - Season 1</h1>
@@ -14,14 +20,9 @@
     const episodesDiv = document.getElementById("episodes");
 
     for (let i = 1; i <= totalEpisodes; i++) {
-      let epNum = String(i).padStart(3, "0");
       let card = document.createElement("div");
       card.className = "card";
-      card.innerHTML = `
-        <a href="episode.html?ep=${i}">
-          <h3>Episode ${i}</h3>
-        </a>
-      `;
+      card.innerHTML = `<a href="episode.html?ep=${i}"><h3>Episode ${i}</h3></a>`;
       episodesDiv.appendChild(card);
     }
   </script>
