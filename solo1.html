@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Solo Leveling - Season 1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Solo Leveling - Season 1</h1>
+  <div class="grid" id="episodes"></div>
+
+  <script>
+    const totalEpisodes = 12;
+    const episodesDiv = document.getElementById("episodes");
+
+    for (let i = 1; i <= totalEpisodes; i++) {
+      let epNum = String(i).padStart(2, "0");
+      let card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <a href="episode.html?anime=solo1&ep=${i}">
+          <h3>Episode ${i}</h3>
+        </a>
+      `;
+      episodesDiv.appendChild(card);
+    }
+  </script>
+</body>
+</html>
