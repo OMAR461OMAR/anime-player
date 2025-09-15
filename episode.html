@@ -16,13 +16,17 @@
   <div class="grid" id="episodes"></div>
 
   <script>
-    const totalEpisodes = 26;
+    const totalEpisodes = 26; // عدد الحلقات
+    const anime = "aot";      // اسم الأنمي (مهم للتمييز)
     const episodesDiv = document.getElementById("episodes");
 
     for (let i = 1; i <= totalEpisodes; i++) {
       let card = document.createElement("div");
       card.className = "card";
-      card.innerHTML = `<a href="episode.html?ep=${i}"><h3>Episode ${i}</h3></a>`;
+      card.innerHTML = `
+        <a href="episode.html?anime=${anime}&ep=${i}">
+          <h3>Episode ${i}</h3>
+        </a>`;
       episodesDiv.appendChild(card);
     }
   </script>
